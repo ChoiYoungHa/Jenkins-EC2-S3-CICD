@@ -15,6 +15,30 @@ Jenkins와 AWS를 사용하여 CI/CD 파이프라인을 구현하고, EC2와 S3�
 ## 🌿 Spring Property 설정 (RDS 정보 은닉)
 RDS 접속 정보를 안전하게 보호하기 위해 Spring Property 파일에서 민감한 정보를 은닉하였습니다.
 
+`application.properties`
+```
+# MySQL DataSource configuration
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+```
+
+**실행 환경에서 환경 변수 설정**
+
+```bash
+# ~/.bashrc 파일 수정
+$ nano ~/.bashrc
+
+# 파일 하단에 DB 관련 환경 변수 추가
+export DB_URL="db_url"
+export DB_USERNAME="username"
+export DB_PASSWORD="password"
+
+# 변경 사항 적용
+$ source ~/.bashrc
+```
+
 ## 🖥️ Jenkins 컨테이너 AWS CLI 설치
 
 
@@ -195,19 +219,24 @@ inotify를 사용하여 파일 변경을 감지하고 자동으로 작업을 수
 
 ## 3.5 ✅ CI/CD 확인
 **파일 수정**
+
 ![2024-10-11 17 24 09](https://github.com/user-attachments/assets/c7f88338-283f-4ddc-b6ab-1c563005677f)
 
 **git push**
+
 ![2024-10-11 17 24 27](https://github.com/user-attachments/assets/4e2caff8-3451-44f4-9295-338a6e1bf940)
 
 
 **파이프라인 동작 확인**
+
 ![2024-10-11 17 20 48](https://github.com/user-attachments/assets/f066c69b-f051-4fcc-8367-f2a3c3afed2f)
 
 **S3 파일변경**
+
 ![2024-10-11 17 21 41](https://github.com/user-attachments/assets/13ed5a23-5f90-45d0-8861-4bd32af68d16)
 
 **AWS 배포확인**
+
 ![2024-10-11 17 23 44](https://github.com/user-attachments/assets/fa44bea2-4bd9-483d-ac18-e8a7ccb5ed3e)
 
 전체 CI/CD 파이프라인을 테스트하여, 모든 단계가 올바르게 동작하는지 확인했습니다.
