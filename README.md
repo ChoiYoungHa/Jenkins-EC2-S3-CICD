@@ -166,7 +166,7 @@ df -h
 
 EC2 인스턴스를 S3에 마운트하여, 빌드된 애플리케이션을 S3에 업로드하고 이를 EC2에서 사용할 수 있도록 구성했습니다.
 
-## 3.4 🔄 스크립트 작성 (inotify 백그라운드 실행)
+## 🔄 스크립트 작성 (inotify 백그라운드 실행)
 ```shell
 #!/bin/bash
 
@@ -226,7 +226,7 @@ nohup ./monitoring.sh > monitoring.log 2>&1 *&
 
 inotify를 사용하여 파일 변경을 감지하고 자동으로 작업을 수행하는 스크립트를 작성하여 백그라운드에서 실행하도록 설정했습니다.
 
-## 3.5 ✅ CI/CD 확인
+## ✅ CI/CD 확인
 **파일 수정**
 
 ![2024-10-11 17 24 09](https://github.com/user-attachments/assets/c7f88338-283f-4ddc-b6ab-1c563005677f)
