@@ -246,7 +246,7 @@ inotify를 사용하여 파일 변경을 감지하고 자동으로 작업을 수
 
 **AWS 배포확인**
 
-![2024-10-11 17 23 44](https://github.com/user-attachments/assets/fa44bea2-4bd9-483d-ac18-e8a7ccb5ed3e)
+![2024-10-13 20 21 26](https://github.com/user-attachments/assets/50f0c163-1806-4190-9e25-cf70b3ff5c51)
 
 전체 CI/CD 파이프라인을 테스트하여, 모든 단계가 올바르게 동작하는지 확인했습니다.
 
